@@ -12,7 +12,9 @@ class User {
         if (!this.id) {
             this.id = uuidV4();
         }
-        this.admin = false;
+        if (!this.admin) {
+            this.admin = false;
+        }
     }
 }
 
