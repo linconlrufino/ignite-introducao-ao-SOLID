@@ -157,7 +157,61 @@
                 }
               }
             }
-          }
+          },        "get":{
+            "tags":[
+              "Users"
+            ],
+            "summary":"List all Users",
+            "description":"List all categories",
+            "parameters":[
+              {
+                "in":"header",
+                "name":"user_id",
+                "required":true,
+                "schema":{
+                  "type":"string",
+                  "format":"uuid"
+                }
+              }
+            ],
+            "responses":{
+              "200":{
+                "description":"Success",
+                "content":{
+                  "application/json":{
+                    "schema":{
+                      "type":"array",
+                      "items":{
+                        "type":"object",
+                        "properties":{
+                              "name":{
+                                "type":"string"
+                              },
+                              "id":{
+                                "type":"uuid"
+                              },
+                              "admin":{
+                                "type":"boolean"
+                              },
+                              "email":{
+                                "type":"string"
+                              },
+                              "created_at":{
+                                "type":"string",
+                                "format":"date"
+                              },
+                              "updated_at":{
+                                "type":"string",
+                                "format":"date"
+                              }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
         }
       }
     }
