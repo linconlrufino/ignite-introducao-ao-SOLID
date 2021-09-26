@@ -130,26 +130,25 @@
                     "items":{
                       "type":"object",
                       "properties":{
-                            "name":{
-                              "type":"string"
-                            },
-                            "id":{
-                              "type":"uuid"
-                            },
-                            "admin":{
-                              "type":"boolean"
-                            },
-                            "email":{
-                              "type":"string"
-                            },
-                            "created_at":{
-                              "type":"string",
-                              "format":"date"
-                            },
-                            "updated_at":{
-                              "type":"string",
-                              "format":"date"
-                            }
+                        "name":{
+                          "type":"string"
+                        },
+                        "id":{
+                          "type":"uuid"
+                        },
+                        "admin":{
+                          "type":"boolean"
+                        },
+                        "email":{
+                          "type":"string"
+                        },
+                        "created_at":{
+                          "type":"string",
+                          "format":"date"
+                        },
+                        "updated_at":{
+                          "type":"string",
+                          "format":"date"
                         }
                       }
                     }
@@ -157,63 +156,122 @@
                 }
               }
             }
-          }, 
+          }
+        }
+      },
+      "/users/{user_id}":{
         "get":{
-            "tags":[
-              "Users"
-            ],
-            "summary":"List all Users",
-            "description":"List all categories",
-            "parameters":[
-              {
-                "in":"header",
-                "name":"user_id",
-                "required":true,
-                "schema":{
-                  "type":"string",
-                  "format":"uuid"
-                }
+          "tags":[
+            "Users"
+          ],
+          "summary":"Return a Specified user",
+          "description":"Return a Specified",
+          "parameters":[
+            {
+              "in":"header",
+              "name":"user_id",
+              "required":true,
+              "schema":{
+                "type":"string",
+                "format":"uuid"
               }
-            ],
-            "responses":{
-              "200":{
-                "description":"Success",
-                "content":{
-                  "application/json":{
-                    "schema":{
-                      "type":"array",
-                      "items":{
-                        "type":"object",
-                        "properties":{
-                              "name":{
-                                "type":"string"
-                              },
-                              "id":{
-                                "type":"uuid"
-                              },
-                              "admin":{
-                                "type":"boolean"
-                              },
-                              "email":{
-                                "type":"string"
-                              },
-                              "created_at":{
-                                "type":"string",
-                                "format":"date"
-                              },
-                              "updated_at":{
-                                "type":"string",
-                                "format":"date"
-                              }
-                          }
+            }
+          ],
+          "responses":{
+            "200":{
+              "description":"Success",
+              "content":{
+                "application/json":{
+                  "schema":{
+                    "type":"array",
+                    "items":{
+                      "type":"object",
+                      "properties":{
+                        "name":{
+                          "type":"string"
+                        },
+                        "id":{
+                          "type":"uuid"
+                        },
+                        "admin":{
+                          "type":"boolean"
+                        },
+                        "email":{
+                          "type":"string"
+                        },
+                        "created_at":{
+                          "type":"string",
+                          "format":"date"
+                        },
+                        "updated_at":{
+                          "type":"string",
+                          "format":"date"
                         }
                       }
                     }
                   }
                 }
               }
+            }
+          }
+        }
+      },
+      "/users/{user_id}/admin":{
+        "patch":{
+          "tags":[
+            "Users"
+          ],
+          "summary":"Turn User to Administrator",
+          "description":"Turn User to Administrator",
+          "parameters":[
+            {
+              "in":"header",
+              "name":"user_id",
+              "required":true,
+              "schema":{
+                "type":"string",
+                "format":"uuid"
+              }
+            }
+          ],
+          "responses":{
+            "200":{
+              "description":"Success",
+              "content":{
+                "application/json":{
+                  "schema":{
+                    "type":"array",
+                    "items":{
+                      "type":"object",
+                      "properties":{
+                        "name":{
+                          "type":"string"
+                        },
+                        "id":{
+                          "type":"uuid"
+                        },
+                        "admin":{
+                          "type":"boolean"
+                        },
+                        "email":{
+                          "type":"string"
+                        },
+                        "created_at":{
+                          "type":"string",
+                          "format":"date"
+                        },
+                        "updated_at":{
+                          "type":"string",
+                          "format":"date"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
           }
         }
       }
     }
-  
+  }
